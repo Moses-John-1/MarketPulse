@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MarketPulse - Simple stock watchlist and company profile viewer" />
+  <meta name="author" content="Moses John" />
+  <title>MarketPulse</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>MarketPulse</h1>
+    <p>Simple stock insights at a glance</p>
+  </header>
+
+  <main>
+
+    <section class="search-section" aria-labelledby="search-heading">
+      <h2 id="search-heading">Search Stock</h2>
+
+      <form id="search-form">
+        <label for="ticker-input">Enter Stock Ticker</label>
+        <input
+          type="text"
+          id="ticker-input"
+          placeholder="e.g. AAPL"
+          required
+          aria-required="true"
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <div id="error-message" role="alert"></div>
+    </section>
+
+    <section class="stock-section" aria-labelledby="stock-heading">
+      <h2 id="stock-heading">Stock Information</h2>
+      <div id="stock-result"></div>
+    </section>
+
+    <section class="company-section" aria-labelledby="company-heading">
+      <h2 id="company-heading">Company Profile</h2>
+      <div id="company-result"></div>
+    </section>
+
+    <section class="watchlist-section" aria-labelledby="watchlist-heading">
+      <h2 id="watchlist-heading">My Watchlist</h2>
+      <ul id="watchlist"></ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MarketPulse</p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

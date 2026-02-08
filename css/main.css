@@ -1,0 +1,65 @@
+:root {
+  --primary: #1E3A8A;
+  --secondary: #E5E7EB;
+  --text: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+}
+
+.app-header {
+  background: var(--primary);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+main {
+  padding: 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  padding: 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#error-message {
+  color: red;
+  margin-top: 0.5rem;
+}
