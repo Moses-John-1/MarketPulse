@@ -55,6 +55,26 @@ button {
   cursor: pointer;
 }
 
+#watchlist {
+  list-style: none;
+  padding: 0;
+}
+
+#watchlist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+#watchlist button {
+  padding: 0.4rem 0.7rem;
+  font-size: 0.85rem;
+}
+
 button:hover {
   opacity: 0.9;
 }
@@ -62,4 +82,26 @@ button:hover {
 #error-message {
   color: red;
   margin-top: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#loading {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+ @media (max-width: 600px) {
+  main {
+    padding: 0.5rem;
+  }
+
+  section {
+    padding: 0.8rem;
+  }
+
+  button {
+    width: 100%;
+  }
 }

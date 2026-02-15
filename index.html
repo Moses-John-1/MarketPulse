@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,6 +14,7 @@
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/animations.css" />
 </head>
+
 <body>
 
   <header class="app-header">
@@ -27,16 +29,14 @@
 
       <form id="search-form">
         <label for="ticker-input">Enter Stock Ticker</label>
-        <input
-          type="text"
-          id="ticker-input"
-          placeholder="e.g. AAPL"
-          required
-          aria-required="true"
-        />
+        <input type="text" id="ticker-input" placeholder="e.g. AAPL" required aria-required="true" />
         <button type="submit">Search</button>
       </form>
 
+      <div id="loading" class="hidden" aria-live="polite">
+        Loading...
+      </div>
+      
       <div id="error-message" role="alert"></div>
     </section>
 
@@ -63,4 +63,5 @@
 
   <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

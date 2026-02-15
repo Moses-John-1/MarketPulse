@@ -7,26 +7,45 @@ import { showError, clearError } from './utils/errorHandler.js';
 
 const form = document.getElementById('search-form');
 const input = document.getElementById('ticker-input');
+const loadingDiv = document.getElementById('loading');
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  renderWatchlist();
+});
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
   clearError();
 
   const ticker = input.value.trim().toUpperCase();
+
   if (!ticker) {
-    showError('Please enter a ticker symbol');
+    showError('Please enter a ticker symbol.');
     return;
   }
 
   try {
+    setLoading(true);
+
     const stockData = await fetchStockData(ticker);
     const companyData = await fetchCompanyData(ticker);
 
     renderStock(stockData);
     renderCompany(companyData);
+
   } catch (error) {
     showError(error.message);
+  } finally {
+    setLoading(false);
   }
 });
 
-renderWatchlist();
+function setLoading(isLoading) {
+  if (isLoading) {
+    loadingDiv.classList.remove('hidden');
+    loadingDiv.innerHTML = `<span class="spinner"></span> Loading...`;
+  } else {
+    loadingDiv.classList.add('hidden');
+    loadingDiv.innerHTML = '';
+  }
+}
