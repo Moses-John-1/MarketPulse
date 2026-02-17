@@ -92,6 +92,58 @@ button:hover {
   margin-top: 1rem;
   font-weight: bold;
 }
+
+.app-footer {
+  background: var(--primary);
+  color: white;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.author h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.author p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: #E5E7EB;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  margin-top: 0.8rem;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.15);
+}
  @media (max-width: 600px) {
   main {
     padding: 0.5rem;
@@ -104,4 +156,18 @@ button:hover {
   button {
     width: 100%;
   }
+
+    .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-social {
+    margin-top: 1rem;
+  }
+
+  .footer-social a {
+    margin: 0 0.6rem;
+  }
+
 }

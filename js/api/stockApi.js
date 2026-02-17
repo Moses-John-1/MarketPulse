@@ -12,8 +12,13 @@ export async function fetchStockData(symbol) {
 
   const data = await response.json();
 
+  // Rate limit handling
+  if (data.Note) {
+    throw new Error('API rate limit reached. Please wait and try again.');
+  }
+
   if (!data['Global Quote'] || Object.keys(data['Global Quote']).length === 0) {
-    throw new Error('Invalid ticker symbol or no stock data found');
+    throw new Error('Invalid ticker symbol.');
   }
 
   const quote = data['Global Quote'];
